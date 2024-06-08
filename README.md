@@ -89,7 +89,7 @@ sudo bash build-docker.sh
 sudo bash run-docker.sh
 ```
 
-### 4. Model should now be running on http://127.0.0.1:5000
+### 4. Model should now be running on http://127.0.0.1:7860
 
 ## Samples
 ![sample2](https://github.com/carlos-dev-research/video-description-gen/assets/68810007/05c4c637-9e60-43a1-bdfe-dec4d934da66)
