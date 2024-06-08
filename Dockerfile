@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
     wget \
     python3-pip \
     ffmpeg
-    
+
 # Install nvidia toolkit
 RUN wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/x86_64/cuda-keyring_1.1-1_all.deb
 RUN dpkg -i cuda-keyring_1.1-1_all.deb
@@ -18,9 +18,8 @@ RUN apt-get update
 RUN apt-get -y install cuda-toolkit-12-5
 
 # Install Python dependencies
-RUN pip3 install torch torchvision torchaudio
-RUN pip3 install --ignore-installed blinker
-RUN pip3 install transformers soundfile librosa ollama gradio ffmpeg opencv-python pillow
+COPY requirements.txt /dependencies/requirements.txt
+RUN pip3 install -r /dependencies/requirements.txt
 
 # Install ollama
 RUN curl -fsSL https://ollama.com/install.sh | sh
